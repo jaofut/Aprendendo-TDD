@@ -2,6 +2,8 @@ package br.ufpa.tdd;
 
 import org.junit.jupiter.api.Test;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
 class ContaTest {
 
     @Test
@@ -46,6 +48,5 @@ class ContaTest {
         assertEquals(350 , conta5.getExtrato());
 
     }
-
 
 }
