@@ -1,5 +1,7 @@
 package br.ufpa.tdd;
 
+import java.util.Objects;
+
 public class Lancamento {
     String tipo;
     double quantia;
@@ -10,12 +12,13 @@ public class Lancamento {
         this.tipo = tipo;
         this.quantia = quantia;
         this.conta = conta;
-        if (tipo == "DEPOSITO") {
-            this.valorApos = quantia + conta.getSaldo();
+        if (Objects.equals(tipo, "DEPOSITO")) {
+            this.valorApos = (quantia + conta.getSaldo());
         }
         else{
-            this.valorApos = conta.getSaldo() - quantia;
+            this.valorApos = (conta.getSaldo() - quantia);
         }
+        conta.saldo = this.valorApos;
 
     }
 
@@ -49,7 +52,6 @@ public class Lancamento {
                 "tipo='" + tipo + '\'' +
                 ", quantia=" + quantia +
                 ", valorApos=" + valorApos +
-                ", conta=" + conta +
                 '}';
     }
 }

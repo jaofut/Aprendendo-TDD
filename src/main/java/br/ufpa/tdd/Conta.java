@@ -15,6 +15,12 @@ public class Conta {
         this.extrato = new ArrayList<>();
     }
 
+    public Conta(String nome) {
+        this.nome = nome;
+        this.extrato = new ArrayList<>();
+
+    }
+
     public void Deposito(int quantia){
         Lancamento lancamento = new Lancamento("DEPOSITO" , quantia ,Conta.this);
         String registroDeposito =lancamento.toString();
