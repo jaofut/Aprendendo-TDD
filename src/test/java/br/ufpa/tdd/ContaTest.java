@@ -31,5 +31,21 @@ class ContaTest {
         assertTrue(conta3.getExtrato().contains("Lancamento{tipo='DEPOSITO', quantia=150.0, valorApos=150.0}"));
 
     }
+    @Test
+    void SaqueAlteraSaldoCorretamente(){
+        Conta conta4 = new Conta("João");
+        conta4.saldo = 300;
+        conta4.Saque(100);
+        assertEquals(200 , conta4.getSaldo());
+
+    }
+    @Test
+    void SaqueCriaLancamentoCorretoNoExtrato(){
+        Conta conta5 = new Conta("João");
+        conta5.saldo = 500;
+        conta5.Saque(350);
+        assertTrue(conta5.getExtrato().contains("Lancamento{tipo='SAQUE', quantia=350.0, valorApos=150.0}"));
+
+    }
 
 }

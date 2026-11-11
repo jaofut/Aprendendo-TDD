@@ -27,6 +27,12 @@ public class Conta {
         extrato.add(registroDeposito);
     }
 
+    public void Saque(int quantia){
+        Lancamento lancamento = new Lancamento("SAQUE" , quantia,Conta.this);
+        String registroSaque = lancamento.toString();
+        extrato.add(registroSaque);
+    }
+
     public void getEntradas(){
         for (String lancamento : this.extrato){
             System.out.println(lancamento
